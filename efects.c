@@ -62,7 +62,8 @@ void loading_efect (void)
 
 	    mask = ((mask >> 1) & 0x7F);
 	    putpixel(scrbuf,loading_x,loading_y,px);
-	    SDL_UpdateRect(scrbuf,loading_x,loading_y,1,1);
+	    // SDL_UpdateRect(scrbuf,loading_x,loading_y,1,1);
+        update_screen();
 
 	    loading_x++;
 	}
@@ -155,7 +156,8 @@ void put_attributes (void)
 	    loading_x++;
 	}
 	loading_x-=8;
-	SDL_UpdateRect(scrbuf,loading_x,loading_y,8,1);
+	// SDL_UpdateRect(scrbuf,loading_x,loading_y,8,1);
+    update_screen();
 	loading_y++;
 	line_a++;
 	}
@@ -253,5 +255,6 @@ void text_scroll_efect (void)
 	if(msgptr>24) textlimit++;
 	if(text_to_show > nofm) text_to_show=1;
 
-	SDL_UpdateRect(scrbuf,272,SCREENHEIGHT-32,392,32);
+	// SDL_UpdateRect(scrbuf,272,SCREENHEIGHT-32,392,32);
+    update_screen();
 }

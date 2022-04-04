@@ -1,7 +1,7 @@
 CC	= gcc
 CFLAGS	= -O2 -Wall
 #CFLAGS	= -O2 -Wall -DUSE_DEBUG
-LIBSDL	= `sdl-config --libs`
+LIBSDL	= `sdl2-config --libs`
 
 OBJS	=        main.o          \
                  file.o          \

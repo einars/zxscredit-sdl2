@@ -63,10 +63,18 @@ int clear_rect (int start_x, int start_y, int rect_width, int rect_height, int r
 }
 
 // Put one pixel on a surface at x,y:
+int was_bpp_debug = 0;
+
 int putpixel (SDL_Surface *surface, int x, int y, Uint32 pixel)
 {
     int bpp = surface->format->BytesPerPixel;
-    Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
+
+  Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
+if (was_bpp_debug == 0) {
+    printf("BPP: %d\n", bpp);
+    was_bpp_debug = 1;
+  }
+    
 
     switch(bpp) {
         case 1:

@@ -4,7 +4,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 #include <stdio.h>
 #include <string.h>
